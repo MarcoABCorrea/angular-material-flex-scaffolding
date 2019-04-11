@@ -4,5 +4,10 @@
     "editor.minimap.enabled": false,
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true
     }
 }
