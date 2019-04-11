@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavBarService } from 'app/shared/nav-bar.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   
-  constructor() {
+  showNavBar$: Observable<boolean>;
+
+  constructor(private navBarService: NavBarService) {
   }
   
   ngOnInit(){
-  }
-  
-  showSideNavBar(): any {
+    this.showNavBar$ = this.navBarService.showNavBar$
   }
 }

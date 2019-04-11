@@ -1,5 +1,6 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import { NavBarService } from 'app/shared/nav-bar.service';
 import { SharedModule } from 'app/shared/shared.module';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -30,6 +31,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
   ],
   entryComponents: [],
   providers: [
+    NavBarService
   ]
   
 })

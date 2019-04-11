@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavBarService } from 'app/shared/nav-bar.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -7,13 +9,16 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
-  showNavBar: boolean = true;
+  showNavBar$: Observable<boolean>;;
 
-  constructor() {
+  constructor(private navBarService: NavBarService) {
+  }
+
+  ngOnInit(){
+    this.showNavBar$ = this.navBarService.showNavBar$;
   }
 
   toggleNavBar() {
-    this.showNavBar = !this.showNavBar;
-    console.log('toggle sidebar ', this.showNavBar)
+    this.navBarService.toggleNavBar();
   }
 }
